@@ -38,7 +38,7 @@ const Chat: NextPage = () => {
     <ChatPageContainer>
       {new Array(step).fill(null).map((data, idx) => {
         return (
-          <>
+          <div key={idx}>
             <SystemChatContainer>
               <SystemChat>{questions[idx]}</SystemChat>
             </SystemChatContainer>
@@ -49,7 +49,7 @@ const Chat: NextPage = () => {
             ) : (
               <></>
             )}
-          </>
+          </div>
         );
       })}
 
