@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export const ChatPageContainer = styled.div`
-  padding: 0.5rem;
-  box-sizing: border-box;
   max-width: 25rem;
   min-width: 10rem;
+  margin: 2rem;
   width: 60%;
   background-color: #eee;
+  border: 1px solid black;
+  padding: 2rem;
+  box-sizing: border-box;
 `;
 
 export const ChatContainer = styled.div`
@@ -15,12 +17,13 @@ export const ChatContainer = styled.div`
 
 export const ChatInput = styled.input`
   padding: 1rem;
-  width: 80%;
+  box-sizing: border-box;
+  width: 68%;
 `;
 
 export const ChatSendButton = styled.button`
   padding: 1rem;
-  width: 20%;
+  width: 30%;
 `;
 
 export const SystemChatContainer = styled(ChatContainer)``;
@@ -31,6 +34,7 @@ export const MyChatContainer = styled(ChatContainer)`
 
 export const Chat = styled.span`
   padding: 0.5rem;
+  border-radius: 0.3rem;
 `;
 
 export const MyChat = styled(Chat)`
@@ -43,5 +47,6 @@ export const SystemChat = styled(Chat)`
 
 export const ChatInputContainer = styled.div`
   display: flex;
-  margin-top: 0.3rem;
+  justify-content: space-between;
+  margin-top: 1rem;
 `;

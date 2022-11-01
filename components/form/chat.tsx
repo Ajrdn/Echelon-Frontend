@@ -14,11 +14,11 @@ import { onChange } from "../../function";
 
 const Chat: NextPage = () => {
   const [questions, setQuestions] = React.useState<string[]>([
-    "회사 이름",
-    "회사 연락처",
-    "회사 이메일",
-    "회사가 필요한 돈",
-    "작성이 완료되었습니다",
+    "회사 이름이 무엇인가요?",
+    "회사 연락처가 무엇인가요?",
+    "회사 이메일이 무엇인가요?",
+    "회사가 필요한 돈은 얼마인가요?",
+    "작성이 완료되었습니다!",
   ]);
 
   const [answers, setAnswers] = React.useState<string[]>([]);
