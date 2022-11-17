@@ -50,5 +50,5 @@ fs.mkdir(`domain/${folderName}`, (error) => {
   });
 
   console.log("칸페키-");
-  console.log(`domain/${folderName}/components`);
+  console.log(`domain/${folderName}/components/index.tsx`);
 });
