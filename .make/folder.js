@@ -1,6 +1,6 @@
 const fs = require("fs");
 const prompt = require("prompt-sync")();
-const { toCamel } = require("./util");
+const { toCamel, componentsTemplate, containerTemplates } = require("./util");
 
 const folderName = prompt("folder no namaewa? ");
 const camelFolderName = toCamel(folderName);
@@ -12,16 +12,7 @@ fs.mkdir(`domain/${folderName}`, (error) => {
     if (error) throw error;
     fs.writeFileSync(
       `domain/${folderName}/components/index.tsx`,
-      `import React from "react";
-import type { NextPage } from "next";
-
-const ${camelFolderName}: NextPage = () => {
-  return (
-    <section>${camelFolderName}</section>
-  )
-};
-export default ${camelFolderName};
-`
+      componentsTemplate(camelFolderName)
     );
 
     fs.writeFileSync(
@@ -49,16 +40,7 @@ export default ${camelFolderName};
     if (error) throw error;
     fs.writeFileSync(
       `domain/${folderName}/container/index.tsx`,
-      `import React from "react";
-import type { NextPage } from "next";
-
-const ${camelFolderName}: NextPage = () => {
-  return (
-    <section>${camelFolderName}</section>
-  )
-};
-export default ${camelFolderName};
-`
+      containerTemplates(camelFolderName)
     );
 
     fs.writeFileSync(
