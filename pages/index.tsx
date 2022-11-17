@@ -1,12 +1,7 @@
 import type { NextPage } from "next";
-import Chat from "../components/form/chat";
 
 const Main: NextPage = () => {
-  return (
-    <section id={`main`}>
-      <Chat />
-    </section>
-  );
+  return <section id={`main`}>Start Here</section>;
 };
 
 export default Main;
