@@ -7,12 +7,12 @@ module.exports = {
   },
   componentsTemplate: (camelFolderName) => {
     const template = `import React from "react";
-    import type { NextPage } from "next";
+import type { NextPage } from "next";
         
-    const ${camelFolderName}: NextPage = () => {
-      return <>${camelFolderName}</>
-    };
-    export default ${camelFolderName};
+const ${camelFolderName}: NextPage = () => {
+  return <>${camelFolderName}</>
+};
+export default ${camelFolderName};
         `;
     return template;
   },
