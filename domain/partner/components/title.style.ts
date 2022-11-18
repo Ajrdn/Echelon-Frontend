@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const TitleProvider = styled.div`
-  width: 60%;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
 `;

@@ -14,13 +14,24 @@ export const CarouselProvider = styled.div`
 `;
 
 const rolling = (width: number) => keyframes`
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-${width}px)
-  }
+from {
+  transform: translateX(-${width}px);
+}
+to {
+  transform: translateX(0);
+}
 `;
+
+const reverseRolling = (width: number) => keyframes`
+from {
+  transform: translateX(0);
+}
+to {
+  transform: translateX(-${width}px);
+}
+`;
+
+
 
 export const ImageGroupProvider = styled.div`
   display: flex;
@@ -28,8 +39,11 @@ export const ImageGroupProvider = styled.div`
 
 export const AnimationProvider = styled.div<{
   width: number;
-  count: number;
+  reverse: boolean;
 }>`
-  animation: ${(props) => rolling(props.width)} 24s linear infinite;
+  animation: ${(props) =>
+      props.reverse ? rolling(props.width) : reverseRolling(props.width)}
+    24s linear infinite;
+
   display: flex;
 `;

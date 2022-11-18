@@ -12,7 +12,7 @@ const PartnerContainer: NextPage = () => {
       <Carousel imageData={new Array(10).fill(SildeImage)} />
       <Carousel
         imageData={new Array(10).fill(SildeImage)}
-        start={1200}
+        reverse={true}
       />
     </PartnerProvider>
   );
