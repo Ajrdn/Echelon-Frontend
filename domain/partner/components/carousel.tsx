@@ -1,38 +1,41 @@
 import React from "react";
 import type { NextPage } from "next";
 import {
-  PartnerProvider,
+  CarouselProvider,
   ImageProvider,
   AnimationProvider,
   ImageGroupProvider,
-} from "./index.style";
+} from "./carousel.style";
 import Image from "next/image";
-import { SildeImage } from "../assets";
 
-const Partner: NextPage = () => {
+const Partner: NextPage<{ start?: number; imageData: string[] }> = ({
+  start = 0,
+  imageData,
+}) => {
   const [imageWidth, setImageWidth] = React.useState<number>(0);
-  const [imageCount, setImageCount] = React.useState<number>(20);
   const imageRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    const providerHeight = imageRef.current?.getBoundingClientRect().width;
-    console.log(providerHeight);
-    setImageWidth(providerHeight!);
-    console.log(imageWidth);
-  }, [imageWidth]);
+    setTimeout(() => {
+      const providerWidth = imageRef.current?.getBoundingClientRect().width;
+      setImageWidth(providerWidth!);
+    }, start);
+  }, [imageWidth, start]);
 
   return (
-    <PartnerProvider>
-      <AnimationProvider width={imageWidth} count={imageCount}>
-        <ImageGroupProvider>
-          {new Array(imageCount).fill(null).map((_, idx) => {
+    <CarouselProvider>
+      <AnimationProvider width={imageWidth} count={imageData.length}>
+        <ImageGroupProvider ref={imageRef}>
+          {imageData.map((data, idx) => {
             return (
-              <ImageProvider key={idx} ref={imageRef}>
+              <ImageProvider key={idx}>
                 <Image
-                  src={SildeImage}
+                  src={data}
                   layout="fixed"
                   alt="파트너"
                   loading="eager"
+                  width={142}
+                  height={80}
                 />
               </ImageProvider>
             );
@@ -40,16 +43,16 @@ const Partner: NextPage = () => {
         </ImageGroupProvider>
 
         <ImageGroupProvider>
-          {new Array(imageCount).fill(null).map((_, idx) => {
+          {imageData.map((data, idx) => {
             return (
               <ImageProvider key={idx}>
-                <Image src={SildeImage} layout="fixed" alt="파트너" />
+                <Image src={data} layout="fixed" alt="파트너" />
               </ImageProvider>
             );
           })}
         </ImageGroupProvider>
       </AnimationProvider>
-    </PartnerProvider>
+    </CarouselProvider>
   );
 };
 export default Partner;
