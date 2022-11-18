@@ -13,6 +13,7 @@ const IntroduceElement: NextPage<{
   console.log(introduceImageSrc);
   return (
     <IntroduceImageProvider>
+      <Image src={introduceImageSrc} alt={introduceText} layout="fixed" />
       <IntroduceElementText>{introduceText}</IntroduceElementText>
     </IntroduceImageProvider>
   );

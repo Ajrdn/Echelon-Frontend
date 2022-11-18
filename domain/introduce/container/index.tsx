@@ -3,17 +3,18 @@ import type { NextPage } from "next";
 import Title from "../components/title";
 import IntroduceElement from "../components/introduceProvider";
 import { IntroduceProvider } from "./index.style";
-import ShortElement from "/public/assets/image/elements/shortElement.svg";
-import LongElement from "/public/assets/image/elements/longElement.svg";
+import {
+  Introduce1,
+  Introduce2,
+  Introduce3,
+  Introduce4,
+  Introduce5,
+  Introduce6,
+} from "../assets";
 
 const IntroduceContainer: NextPage = () => {
   const [pictures, setPictures] = React.useState<string[][]>([
-    [ShortElement, "Shares"],
-    [LongElement, "Zero Coupon Convertible Bonf"],
-    [ShortElement, "Shares"],
-    [LongElement, "Zero Coupon Convertible Bonf"],
-    [ShortElement, "Shares"],
-    [ShortElement, "Shares"],
+
   ]);
 
   return (

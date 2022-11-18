@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const IntroduceProvider = styled.div`
-  width: 70%;
+  width: 75%;
   margin-left: auto;
   margin-right: auto;
 `;

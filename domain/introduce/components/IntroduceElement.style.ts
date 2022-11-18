@@ -5,28 +5,15 @@ export const IntroduceImageProvider = styled.div`
   border-radius: 1.5rem;
   position: relative;
   display: inline-block;
-  z-index: 100;
-
-  background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0) 10%,
-      rgba(255, 255, 255, 0.5) 25%,
-      rgba(255, 255, 255, 0.7) 40%,
-      rgba(255, 255, 255, 1) 50%,
-      rgba(255, 255, 255, 1) 75%,
-      rgba(255, 255, 255, 1) 100%
-    ),
-    url("img/spain_4.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  border-radius: 30px;
+  margin: 0 0.2rem;
 `;
 
 export const IntroduceElementText = styled.div`
   position: absolute;
-  bottom: 10px;
-  left: 20px;
+  bottom: 10%;
+  left: 10%;
   color: ${theme.white};
   font-size: 2rem;
+  font-weight: bold;
 `;
 export const IntroduceElementGradient = styled.div``;
