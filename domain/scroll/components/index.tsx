@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import { ScrollProvider, ScrollText, ScrollTextProvider } from "./index.style";
 
 const Scroll: NextPage = () => {
-  const textRef = React.useRef<HTMLHeadingElement>(null);
+  const mainTextRef = React.useRef<HTMLHeadingElement>(null);
   const divRef = React.useRef<HTMLDivElement>(null);
   const [opa, setOpa] = React.useState<number>(0);
   React.useEffect(() => {
@@ -26,7 +26,7 @@ const Scroll: NextPage = () => {
   return (
     <ScrollProvider ref={divRef}>
       <ScrollTextProvider>
-        <ScrollText ref={textRef} opacity={opa}>
+        <ScrollText ref={mainTextRef} opacity={opa}>
           엄 준 식 화 이팅 엄 준 식화 이팅 엄 준 식 화 이팅 엄 준 식화 이팅 엄
         </ScrollText>
       </ScrollTextProvider>
