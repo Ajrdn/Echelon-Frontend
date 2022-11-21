@@ -1,0 +1,1 @@
+export {default as JumbotronBackground} from './main/jumbotronBackground.svg'

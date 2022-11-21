@@ -3,7 +3,7 @@ const lightMain = "#DABFFC";
 const background = "#0D1117";
 const lightBackground = "#202B3D";
 const green = "#3BB143";
-const white = "#fffff4";
+const white = "#fffffe";
 const black = "#000004";
 
 const red = {
