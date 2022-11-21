@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "../styles/globalStyle";
 import { UserStyle } from "../styles/userStyle";
 import HeaderContainer from "../domain/header/container";
+import FooterContainer from "../domain/footer/container";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -13,6 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <GlobalStyle />
       <UserStyle />
       <Component {...pageProps} />
+      <FooterContainer />
     </ThemeProvider>
   );
 }
